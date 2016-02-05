@@ -17,4 +17,8 @@ add_custom_target (js
     COMMAND ${EMCC} $<TARGET_FILE:vterm>
     -o vterm.js
     -s EXPORTED_FUNCTIONS=@"${CMAKE_CURRENT_SOURCE_DIR}/exported_functions"
+    --pre-js ${CMAKE_CURRENT_SOURCE_DIR}/js/pre.js
+    --post-js ${CMAKE_CURRENT_SOURCE_DIR}/js/api.js
+    --post-js ${CMAKE_CURRENT_SOURCE_DIR}/js/exports.js
+    --post-js ${CMAKE_CURRENT_SOURCE_DIR}/js/post.js
     )
