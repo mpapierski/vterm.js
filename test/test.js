@@ -8,5 +8,8 @@ describe('VTerm', function() {
       term.close();
       term.close();
     });
+    it('write should return bytes written', function() {
+      assert.equal(12, term.write('Hello world!'));
+    });
   });
 });
