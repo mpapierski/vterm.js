@@ -20,4 +20,17 @@ describe('VTerm', function() {
       assert.equal(0, term.write(null));
     });
   });
+  describe('parser callbacks', function() {
+    it('set works with an object', function() {
+      term.parser_set_callbacks({
+        text: function() {},
+        control: function() {},
+        escape: function() {},
+        csi: function() {},
+        osc: function() {},
+        dcs: function() {},
+        resize: function() {}
+      });
+    });
+  });
 });

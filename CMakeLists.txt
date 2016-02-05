@@ -45,6 +45,7 @@ add_custom_command (OUTPUT vterm.js
     -o ${CMAKE_CURRENT_BINARY_DIR}/vterm.js
     -O0
     -s EXPORTED_FUNCTIONS=@exported_functions
+    -s RESERVED_FUNCTION_POINTERS=20
     -s ASSERTIONS=2
     -s NO_FILESYSTEM=1
     ${emcc_ARGS}
