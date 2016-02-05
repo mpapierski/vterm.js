@@ -20,6 +20,19 @@ describe('VTerm', function() {
       assert.equal(0, term.write(null));
     });
   });
+  describe('utf8', function() {
+    it('by default is not set', function() {
+      assert.equal(false, term.get_utf8());
+    });
+    it('set flag', function() {
+      term.set_utf8(true);
+      assert.equal(true, term.get_utf8());
+    });
+    it('unset flag', function() {
+      term.set_utf8(false);
+      assert.equal(false, term.get_utf8());
+    });
+  });
   describe('parser callbacks', function() {
     it('set works with an object', function() {
       term.parser_set_callbacks({

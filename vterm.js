@@ -32764,6 +32764,14 @@ function VTerm(rows, cols) {
   this._parser_callbacks = null;
 }
 
+VTerm.prototype.set_utf8 = function(flag) {
+  Module._vterm_set_utf8(this.term, flag);
+}
+
+VTerm.prototype.get_utf8 = function() {
+  return Module._vterm_get_utf8(this.term) === -1;
+}
+
 /**
  * Sets parser callbacks for virtual terminal.
  *
