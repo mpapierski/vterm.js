@@ -8,8 +8,16 @@ describe('VTerm', function() {
       term.close();
       term.close();
     });
-    it('write should return bytes written', function() {
+  });
+  describe('write', function() {
+    it('should return amount of data', function() {
       assert.equal(12, term.write('Hello world!'));
+    });
+    it('empty write works', function() {
+      assert.equal(0, term.write(''));
+    });
+    it('invalid type fails gracefully', function() {
+      assert.equal(0, term.write(null));
     });
   });
 });

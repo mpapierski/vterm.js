@@ -33601,6 +33601,9 @@ VTerm.prototype.close = function() {
  * @return {number} Bytes written
  */
 VTerm.prototype.write = function(data) {
+  if (typeof data !== 'string') {
+    return 0;
+  }
   return Module._vterm_input_write(this.term, data, data.length);
 }
 
