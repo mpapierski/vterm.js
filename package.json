@@ -1,0 +1,22 @@
+{
+  "name": "vterm.js",
+  "version": "0.0.1",
+  "description": "Abstract VT220/Xterm/ECMA-48 emulation library",
+  "main": "vterm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpapierski/vterm.js.git"
+  },
+  "keywords": [
+    "vt"
+  ],
+  "author": "Michał Papierski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mpapierski/vterm.js/issues"
+  },
+  "homepage": "https://github.com/mpapierski/vterm.js#readme"
+}

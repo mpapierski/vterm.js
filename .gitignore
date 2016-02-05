@@ -1,5 +1,10 @@
+# Building stuff
+
 *.bc
 CMakeFiles/
 CMakeCache.txt
 Makefile
 cmake_install.cmake
+
+# JavaScript stuff
+node_modules/
