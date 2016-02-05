@@ -46,6 +46,7 @@ add_custom_command (OUTPUT vterm.js
     -O0
     -s EXPORTED_FUNCTIONS=@exported_functions
     -s ASSERTIONS=2
+    -s NO_FILESYSTEM=1
     ${emcc_ARGS}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     DEPENDS vterm ${PRE_SOURCES} ${POST_SOURCES}
