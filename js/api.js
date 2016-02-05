@@ -4,5 +4,9 @@ function VTerm(rows, cols) {
 }
 
 VTerm.prototype.close = function() {
+    if (!this.term) {
+        return;
+    }
     Module._vterm_free(this.term);
+    delete this.term;
 }
