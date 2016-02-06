@@ -59,13 +59,13 @@ describe('VTerm', function() {
       term.set_utf8(true);
 
       callbacks = new VTerm.VTermParserCallbacks({
-	text: text_callback,
-	control: control_callback,
-	escape: escape_callback,
-	csi: csi_callback,
-	osc: osc_callback,
-	dcs: dcs_callback,
-	resize: resize_callback
+        text: text_callback,
+        control: control_callback,
+        escape: escape_callback,
+        csi: csi_callback,
+        osc: osc_callback,
+        dcs: dcs_callback,
+        resize: resize_callback
       });
       term.parser_set_callbacks(callbacks);
     });
@@ -94,48 +94,48 @@ describe('VTerm', function() {
       var screen = null;
 
       beforeEach(function() {
-	screen = term.obtain_screen();
-	term.screen_reset(screen, 1);
+        screen = term.obtain_screen();
+        term.screen_reset(screen, 1);
       })
 
       it('is valid', function() {
-	assert.notEqual(0, screen);
+        assert.notEqual(0, screen);
       });
 
       describe('callbacks', function() {
-	var damage = sinon.stub().returns(1);
-	var moverect = sinon.stub().returns(1);
-	var movecursor = sinon.stub().returns(1);
-	var settermprop = sinon.stub().returns(1);
-	var bell = sinon.stub().returns(1);
-	var resize = sinon.stub().returns(1);
-	var sb_pushline = sinon.stub().returns(1);
-	var sb_popline = sinon.stub().returns(1);
-	var screen_callbacks;
+        var damage = sinon.stub().returns(1);
+        var moverect = sinon.stub().returns(1);
+        var movecursor = sinon.stub().returns(1);
+        var settermprop = sinon.stub().returns(1);
+        var bell = sinon.stub().returns(1);
+        var resize = sinon.stub().returns(1);
+        var sb_pushline = sinon.stub().returns(1);
+        var sb_popline = sinon.stub().returns(1);
+        var screen_callbacks;
 
-	beforeEach(function() {
-	  screen_callbacks = new VTerm.VTermScreenCallbacks({
-	    damage: damage,
-	    moverect: moverect,
-	    movecursor: movecursor,
-	    settermprop: settermprop,
-	    bell: bell,
-	    resize: resize,
-	    sb_pushline: sb_pushline,
-	    sb_popline: sb_popline
-	  });
-	  term.screen_set_callbacks(screen, screen_callbacks);
-	});
+        beforeEach(function() {
+          screen_callbacks = new VTerm.VTermScreenCallbacks({
+            damage: damage,
+            moverect: moverect,
+            movecursor: movecursor,
+            settermprop: settermprop,
+            bell: bell,
+            resize: resize,
+            sb_pushline: sb_pushline,
+            sb_popline: sb_popline
+          });
+          term.screen_set_callbacks(screen, screen_callbacks);
+        });
 
-	afterEach(function() {
-	  screen_callbacks.cleanup();
-	});
+        afterEach(function() {
+          screen_callbacks.cleanup();
+        });
 
-	it('works', function() {
-	  term.write('Hello world!');
-	  assert(damage.called);
-	  assert(movecursor.called);
-	});
+        it('works', function() {
+          term.write('Hello world!');
+          assert(damage.called);
+          assert(movecursor.called);
+        });
 
       });
     });
