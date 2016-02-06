@@ -11,7 +11,14 @@ You can use this library to build your web based TTY.
 
 # How to use
 
-TBD
+TBD.
+
+```javascript
+var VTerm = require('vterm.js');
+var term = new VTerm(25, 80);
+term.write('Hello world!');
+term.close();
+```
 
 # License
 
