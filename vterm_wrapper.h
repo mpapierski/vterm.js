@@ -12,4 +12,14 @@ VTermParserCallbacks * vterm_wrapper_parser_create_callbacks(
     int (*dcs)(const char *command, size_t cmdlen, void *user),
     int (*resize)(int rows, int cols, void *user));
 
+VTermScreenCallbacks * vterm_wrapper_screen_create_callbacks(
+    int (*damage)(VTermRect rect, void *user),
+    int (*moverect)(VTermRect dest, VTermRect src, void *user),
+    int (*movecursor)(VTermPos pos, VTermPos oldpos, int visible, void *user),
+    int (*settermprop)(VTermProp prop, VTermValue *val, void *user),
+    int (*bell)(void *user),
+    int (*resize)(int rows, int cols, void *user),
+    int (*sb_pushline)(int cols, const VTermScreenCell *cells, void *user),
+    int (*sb_popline)(int cols, VTermScreenCell *cells, void *user));
+
 #endif

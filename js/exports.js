@@ -1,2 +1,6 @@
 // exports.js
-this['VTerm'] = VTerm;
+this['VTerm'] = {
+  'VTerm': VTerm,
+  'VTermParserCallbacks': VTermParserCallbacks,
+  'VTermScreenCallbacks': VTermScreenCallbacks
+};
