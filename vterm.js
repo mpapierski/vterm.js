@@ -32906,8 +32906,16 @@ function VTermParserCallbacks(callbacks) {
     callbacks.csi(leader, new_args, intermed, command);
     return 1;
   });
-  this.fn_osc = Module.Runtime.addFunction(callbacks.osc);
-  this.fn_dcs = Module.Runtime.addFunction(callbacks.dcs);
+  this.fn_osc = Module.Runtime.addFunction(function(command, cmdlen, user) {
+    var command = Pointer_stringify(command, cmdlen);
+    callbacks.osc(command)
+    return 1;
+  });
+  this.fn_dcs = Module.Runtime.addFunction(function(command, cmdlen, user) {
+    var command = Pointer_stringify(command, cmdlen);
+    callbacks.dcs(command);
+    return 1;
+  });
   this.fn_resize = Module.Runtime.addFunction(callbacks.resize);
   this.pointer = Module._vterm_wrapper_parser_create_callbacks(
     this.fn_text,

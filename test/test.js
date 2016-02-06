@@ -112,6 +112,16 @@ describe('VTerm', function() {
       assert(csi_callback.called);
       sinon.assert.calledWith(csi_callback, '', [3, 4], '', 99);
     });
+    it('calls osc', function() {
+      term.write('\x1b]1;Hello\x07');
+      assert(osc_callback.called);
+      sinon.assert.calledWith(osc_callback, '1;Hello');
+    });
+    it('calls dcs', function() {
+      term.write('\x1bPHello\x07');
+      assert(dcs_callback.called);
+      sinon.assert.calledWith(dcs_callback, 'Hello');
+    });
     describe('screen', function() {
       var screen = null;
 
