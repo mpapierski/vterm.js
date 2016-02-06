@@ -14,6 +14,16 @@ set(CMAKE_CXX_CREATE_STATIC_LIBRARY "<CMAKE_AR> -o <TARGET> <LINK_FLAGS> <OBJECT
 
 add_subdirectory (libvterm)
 
+# Some wrapper code to support structs
+include_directories (libvterm/include)
+
+add_library (vterm_wrapper
+    vterm_wrapper.c
+    vterm_wrapper.h)
+target_link_libraries (vterm_wrapper
+    vterm
+    )
+
 # Order matters
 set (PRE_SOURCES
     js/pre.js
@@ -41,7 +51,7 @@ foreach (src ${POST_SOURCES})
 endforeach ()
 
 add_custom_command (OUTPUT vterm.js
-    COMMAND ${EMCC} $<TARGET_FILE:vterm>
+    COMMAND ${EMCC} $<TARGET_FILE:vterm> $<TARGET_FILE:vterm_wrapper>
     -o ${CMAKE_CURRENT_BINARY_DIR}/vterm.js
     -O0
     -s EXPORTED_FUNCTIONS=@exported_functions

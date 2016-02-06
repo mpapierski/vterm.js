@@ -68,5 +68,6 @@
     "_vterm_get_attr_type",
     "_vterm_get_prop_type",
     "_vterm_scroll_rect",
-    "_vterm_copy_cells"
+    "_vterm_copy_cells",
+    "_vterm_wrapper_parser_create_callbacks"
 ]

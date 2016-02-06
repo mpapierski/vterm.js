@@ -21712,6 +21712,57 @@ function _default_free($ptr,$allocdata) {
  _free($2);
  STACKTOP = sp;return;
 }
+function _vterm_wrapper_parser_create_callbacks($text,$control,$escape,$csi,$osc,$dcs,$resize) {
+ $text = $text|0;
+ $control = $control|0;
+ $escape = $escape|0;
+ $csi = $csi|0;
+ $osc = $osc|0;
+ $dcs = $dcs|0;
+ $resize = $resize|0;
+ var $0 = 0, $1 = 0, $10 = 0, $11 = 0, $12 = 0, $13 = 0, $14 = 0, $15 = 0, $16 = 0, $17 = 0, $18 = 0, $19 = 0, $2 = 0, $20 = 0, $21 = 0, $22 = 0, $23 = 0, $24 = 0, $25 = 0, $26 = 0;
+ var $27 = 0, $28 = 0, $3 = 0, $4 = 0, $5 = 0, $6 = 0, $7 = 0, $8 = 0, $9 = 0, $callbacks = 0, label = 0, sp = 0;
+ sp = STACKTOP;
+ STACKTOP = STACKTOP + 32|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
+ $0 = $text;
+ $1 = $control;
+ $2 = $escape;
+ $3 = $csi;
+ $4 = $osc;
+ $5 = $dcs;
+ $6 = $resize;
+ $7 = (_malloc(28)|0);
+ $callbacks = $7;
+ $8 = $0;
+ $9 = $callbacks;
+ HEAP32[$9>>2] = $8;
+ $10 = $1;
+ $11 = $callbacks;
+ $12 = ((($11)) + 4|0);
+ HEAP32[$12>>2] = $10;
+ $13 = $2;
+ $14 = $callbacks;
+ $15 = ((($14)) + 8|0);
+ HEAP32[$15>>2] = $13;
+ $16 = $3;
+ $17 = $callbacks;
+ $18 = ((($17)) + 12|0);
+ HEAP32[$18>>2] = $16;
+ $19 = $4;
+ $20 = $callbacks;
+ $21 = ((($20)) + 16|0);
+ HEAP32[$21>>2] = $19;
+ $22 = $5;
+ $23 = $callbacks;
+ $24 = ((($23)) + 20|0);
+ HEAP32[$24>>2] = $22;
+ $25 = $6;
+ $26 = $callbacks;
+ $27 = ((($26)) + 24|0);
+ HEAP32[$27>>2] = $25;
+ $28 = $callbacks;
+ STACKTOP = sp;return ($28|0);
+}
 function _wcrtomb($s,$wc,$st) {
  $s = $s|0;
  $wc = $wc|0;
@@ -31965,7 +32016,7 @@ var FUNCTION_TABLE_iii = [b524,b525,jsCall_iii_0,b526,jsCall_iii_1,b527,jsCall_i
 ,b539,jsCall_iii_14,b540,jsCall_iii_15,b541,jsCall_iii_16,b542,jsCall_iii_17,b543,jsCall_iii_18,b544,jsCall_iii_19,b545,b546,b547,b548,b549,b550,b551,b552,b553,b554,b555,b556,b557,b558,b559,_on_control,b560,b561
 ,b562,b563,b564,_default_malloc,b565];
 
-  return { _vterm_get_size: _vterm_get_size, _bitshift64Shl: _bitshift64Shl, _vterm_parser_get_cbdata: _vterm_parser_get_cbdata, _vterm_screen_enable_altscreen: _vterm_screen_enable_altscreen, _vterm_state_get_lineinfo: _vterm_state_get_lineinfo, _vterm_state_set_unrecognised_fallbacks: _vterm_state_set_unrecognised_fallbacks, _vterm_state_reset: _vterm_state_reset, _vterm_push_output_sprintf_ctrl: _vterm_push_output_sprintf_ctrl, _vterm_set_size: _vterm_set_size, _vterm_state_get_default_colors: _vterm_state_get_default_colors, _free: _free, _vterm_screen_get_unrecognised_fbdata: _vterm_screen_get_unrecognised_fbdata, _vterm_screen_reset: _vterm_screen_reset, _vterm_unicode_is_combining: _vterm_unicode_is_combining, _vterm_keyboard_start_paste: _vterm_keyboard_start_paste, _vterm_screen_set_callbacks: _vterm_screen_set_callbacks, _bitshift64Lshr: _bitshift64Lshr, _i64Subtract: _i64Subtract, _vterm_screen_get_attrs_extent: _vterm_screen_get_attrs_extent, _vterm_mouse_move: _vterm_mouse_move, _vterm_state_set_bold_highbright: _vterm_state_set_bold_highbright, _i64Add: _i64Add, _vterm_screen_get_chars: _vterm_screen_get_chars, _vterm_obtain_state: _vterm_obtain_state, _vterm_screen_get_text: _vterm_screen_get_text, _vterm_state_get_unrecognised_fbdata: _vterm_state_get_unrecognised_fbdata, _vterm_scroll_rect: _vterm_scroll_rect, _vterm_get_attr_type: _vterm_get_attr_type, _vterm_keyboard_end_paste: _vterm_keyboard_end_paste, _vterm_state_savepen: _vterm_state_savepen, _memset: _memset, _vterm_unicode_width: _vterm_unicode_width, _vterm_set_utf8: _vterm_set_utf8, _vterm_push_output_vsprintf: _vterm_push_output_vsprintf, _memcpy: _memcpy, _vterm_output_read: _vterm_output_read, _vterm_allocator_malloc: _vterm_allocator_malloc, _vterm_state_newpen: _vterm_state_newpen, _vterm_state_getpen: _vterm_state_getpen, _vterm_get_utf8: _vterm_get_utf8, _vterm_parser_set_callbacks: _vterm_parser_set_callbacks, _vterm_screen_flush_damage: _vterm_screen_flush_damage, _vterm_allocator_free: _vterm_allocator_free, _vterm_push_output_bytes: _vterm_push_output_bytes, _vterm_state_free: _vterm_state_free, _vterm_screen_is_eol: _vterm_screen_is_eol, _vterm_keyboard_unichar: _vterm_keyboard_unichar, _vterm_lookup_encoding: _vterm_lookup_encoding, _vterm_state_set_termprop: _vterm_state_set_termprop, _vterm_keyboard_key: _vterm_keyboard_key, _vterm_output_get_buffer_size: _vterm_output_get_buffer_size, _vterm_state_setpen: _vterm_state_setpen, _vterm_state_get_penattr: _vterm_state_get_penattr, _vterm_screen_set_damage_merge: _vterm_screen_set_damage_merge, _vterm_new_with_allocator: _vterm_new_with_allocator, _vterm_copy_cells: _vterm_copy_cells, _vterm_new: _vterm_new, _vterm_screen_get_cell: _vterm_screen_get_cell, _vterm_get_prop_type: _vterm_get_prop_type, _vterm_output_get_buffer_remaining: _vterm_output_get_buffer_remaining, _vterm_state_resetpen: _vterm_state_resetpen, _vterm_state_set_callbacks: _vterm_state_set_callbacks, _vterm_state_set_default_colors: _vterm_state_set_default_colors, _vterm_state_get_cursorpos: _vterm_state_get_cursorpos, _memmove: _memmove, _vterm_screen_get_cbdata: _vterm_screen_get_cbdata, _vterm_push_output_sprintf: _vterm_push_output_sprintf, _vterm_input_write: _vterm_input_write, _vterm_free: _vterm_free, _vterm_state_set_palette_color: _vterm_state_set_palette_color, _malloc: _malloc, _vterm_obtain_screen: _vterm_obtain_screen, _vterm_screen_set_unrecognised_fallbacks: _vterm_screen_set_unrecognised_fallbacks, _vterm_output_get_buffer_current: _vterm_output_get_buffer_current, _vterm_push_output_sprintf_dcs: _vterm_push_output_sprintf_dcs, _vterm_screen_free: _vterm_screen_free, _vterm_state_get_palette_color: _vterm_state_get_palette_color, _vterm_state_get_cbdata: _vterm_state_get_cbdata, _vterm_mouse_button: _vterm_mouse_button, runPostSets: runPostSets, stackAlloc: stackAlloc, stackSave: stackSave, stackRestore: stackRestore, establishStackSpace: establishStackSpace, setThrew: setThrew, setTempRet0: setTempRet0, getTempRet0: getTempRet0, dynCall_iiii: dynCall_iiii, dynCall_vi: dynCall_vi, dynCall_vii: dynCall_vii, dynCall_iiiiiii: dynCall_iiiiiii, dynCall_ii: dynCall_ii, dynCall_viii: dynCall_viii, dynCall_viiiiiiii: dynCall_viiiiiiii, dynCall_iiiii: dynCall_iiiii, dynCall_iii: dynCall_iii };
+  return { _vterm_get_size: _vterm_get_size, _bitshift64Shl: _bitshift64Shl, _vterm_parser_get_cbdata: _vterm_parser_get_cbdata, _vterm_screen_enable_altscreen: _vterm_screen_enable_altscreen, _vterm_state_get_lineinfo: _vterm_state_get_lineinfo, _vterm_state_set_unrecognised_fallbacks: _vterm_state_set_unrecognised_fallbacks, _vterm_state_reset: _vterm_state_reset, _vterm_push_output_sprintf_ctrl: _vterm_push_output_sprintf_ctrl, _vterm_set_size: _vterm_set_size, _vterm_state_get_default_colors: _vterm_state_get_default_colors, _free: _free, _vterm_screen_get_unrecognised_fbdata: _vterm_screen_get_unrecognised_fbdata, _vterm_screen_reset: _vterm_screen_reset, _vterm_unicode_is_combining: _vterm_unicode_is_combining, _vterm_keyboard_start_paste: _vterm_keyboard_start_paste, _vterm_screen_set_callbacks: _vterm_screen_set_callbacks, _bitshift64Lshr: _bitshift64Lshr, _vterm_wrapper_parser_create_callbacks: _vterm_wrapper_parser_create_callbacks, _i64Subtract: _i64Subtract, _vterm_screen_get_attrs_extent: _vterm_screen_get_attrs_extent, _vterm_mouse_move: _vterm_mouse_move, _vterm_state_set_bold_highbright: _vterm_state_set_bold_highbright, _i64Add: _i64Add, _vterm_screen_get_chars: _vterm_screen_get_chars, _vterm_obtain_state: _vterm_obtain_state, _vterm_screen_get_text: _vterm_screen_get_text, _vterm_state_get_unrecognised_fbdata: _vterm_state_get_unrecognised_fbdata, _vterm_scroll_rect: _vterm_scroll_rect, _vterm_get_attr_type: _vterm_get_attr_type, _vterm_keyboard_end_paste: _vterm_keyboard_end_paste, _vterm_state_savepen: _vterm_state_savepen, _memset: _memset, _vterm_unicode_width: _vterm_unicode_width, _vterm_set_utf8: _vterm_set_utf8, _vterm_push_output_vsprintf: _vterm_push_output_vsprintf, _memcpy: _memcpy, _vterm_output_read: _vterm_output_read, _vterm_allocator_malloc: _vterm_allocator_malloc, _vterm_state_newpen: _vterm_state_newpen, _vterm_state_getpen: _vterm_state_getpen, _vterm_get_utf8: _vterm_get_utf8, _vterm_parser_set_callbacks: _vterm_parser_set_callbacks, _vterm_screen_flush_damage: _vterm_screen_flush_damage, _vterm_allocator_free: _vterm_allocator_free, _vterm_push_output_bytes: _vterm_push_output_bytes, _vterm_state_free: _vterm_state_free, _vterm_screen_is_eol: _vterm_screen_is_eol, _vterm_keyboard_unichar: _vterm_keyboard_unichar, _vterm_lookup_encoding: _vterm_lookup_encoding, _vterm_state_set_termprop: _vterm_state_set_termprop, _vterm_keyboard_key: _vterm_keyboard_key, _vterm_output_get_buffer_size: _vterm_output_get_buffer_size, _vterm_state_setpen: _vterm_state_setpen, _vterm_state_get_penattr: _vterm_state_get_penattr, _vterm_screen_set_damage_merge: _vterm_screen_set_damage_merge, _vterm_new_with_allocator: _vterm_new_with_allocator, _vterm_copy_cells: _vterm_copy_cells, _vterm_new: _vterm_new, _vterm_screen_get_cell: _vterm_screen_get_cell, _vterm_get_prop_type: _vterm_get_prop_type, _vterm_output_get_buffer_remaining: _vterm_output_get_buffer_remaining, _vterm_state_resetpen: _vterm_state_resetpen, _vterm_state_set_callbacks: _vterm_state_set_callbacks, _vterm_state_set_default_colors: _vterm_state_set_default_colors, _vterm_state_get_cursorpos: _vterm_state_get_cursorpos, _memmove: _memmove, _vterm_screen_get_cbdata: _vterm_screen_get_cbdata, _vterm_push_output_sprintf: _vterm_push_output_sprintf, _vterm_input_write: _vterm_input_write, _vterm_free: _vterm_free, _vterm_state_set_palette_color: _vterm_state_set_palette_color, _malloc: _malloc, _vterm_obtain_screen: _vterm_obtain_screen, _vterm_screen_set_unrecognised_fallbacks: _vterm_screen_set_unrecognised_fallbacks, _vterm_output_get_buffer_current: _vterm_output_get_buffer_current, _vterm_push_output_sprintf_dcs: _vterm_push_output_sprintf_dcs, _vterm_screen_free: _vterm_screen_free, _vterm_state_get_palette_color: _vterm_state_get_palette_color, _vterm_state_get_cbdata: _vterm_state_get_cbdata, _vterm_mouse_button: _vterm_mouse_button, runPostSets: runPostSets, stackAlloc: stackAlloc, stackSave: stackSave, stackRestore: stackRestore, establishStackSpace: establishStackSpace, setThrew: setThrew, setTempRet0: setTempRet0, getTempRet0: getTempRet0, dynCall_iiii: dynCall_iiii, dynCall_vi: dynCall_vi, dynCall_vii: dynCall_vii, dynCall_iiiiiii: dynCall_iiiiiii, dynCall_ii: dynCall_ii, dynCall_viii: dynCall_viii, dynCall_viiiiiiii: dynCall_viiiiiiii, dynCall_iiiii: dynCall_iiiii, dynCall_iii: dynCall_iii };
 })
 // EMSCRIPTEN_END_ASM
 (Module.asmGlobalArg, Module.asmLibraryArg, buffer);
@@ -32251,6 +32302,12 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_keyboard_key.apply(null, arguments);
 };
 
+var real__vterm_state_get_cbdata = asm["_vterm_state_get_cbdata"]; asm["_vterm_state_get_cbdata"] = function() {
+assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+return real__vterm_state_get_cbdata.apply(null, arguments);
+};
+
 var real__vterm_screen_set_damage_merge = asm["_vterm_screen_set_damage_merge"]; asm["_vterm_screen_set_damage_merge"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
@@ -32359,10 +32416,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_state_set_unrecognised_fallbacks.apply(null, arguments);
 };
 
-var real__vterm_state_get_cbdata = asm["_vterm_state_get_cbdata"]; asm["_vterm_state_get_cbdata"] = function() {
+var real__vterm_wrapper_parser_create_callbacks = asm["_vterm_wrapper_parser_create_callbacks"]; asm["_vterm_wrapper_parser_create_callbacks"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_state_get_cbdata.apply(null, arguments);
+return real__vterm_wrapper_parser_create_callbacks.apply(null, arguments);
 };
 
 var real__vterm_parser_get_cbdata = asm["_vterm_parser_get_cbdata"]; asm["_vterm_parser_get_cbdata"] = function() {
@@ -32479,6 +32536,7 @@ var _vterm_state_set_termprop = Module["_vterm_state_set_termprop"] = asm["_vter
 var _i64Add = Module["_i64Add"] = asm["_i64Add"];
 var _vterm_state_setpen = Module["_vterm_state_setpen"] = asm["_vterm_state_setpen"];
 var _vterm_keyboard_key = Module["_vterm_keyboard_key"] = asm["_vterm_keyboard_key"];
+var _vterm_state_get_cbdata = Module["_vterm_state_get_cbdata"] = asm["_vterm_state_get_cbdata"];
 var _vterm_screen_set_damage_merge = Module["_vterm_screen_set_damage_merge"] = asm["_vterm_screen_set_damage_merge"];
 var _vterm_state_set_callbacks = Module["_vterm_state_set_callbacks"] = asm["_vterm_state_set_callbacks"];
 var _vterm_new_with_allocator = Module["_vterm_new_with_allocator"] = asm["_vterm_new_with_allocator"];
@@ -32498,7 +32556,7 @@ var _vterm_state_set_default_colors = Module["_vterm_state_set_default_colors"] 
 var _vterm_get_size = Module["_vterm_get_size"] = asm["_vterm_get_size"];
 var _vterm_push_output_sprintf_ctrl = Module["_vterm_push_output_sprintf_ctrl"] = asm["_vterm_push_output_sprintf_ctrl"];
 var _vterm_state_set_unrecognised_fallbacks = Module["_vterm_state_set_unrecognised_fallbacks"] = asm["_vterm_state_set_unrecognised_fallbacks"];
-var _vterm_state_get_cbdata = Module["_vterm_state_get_cbdata"] = asm["_vterm_state_get_cbdata"];
+var _vterm_wrapper_parser_create_callbacks = Module["_vterm_wrapper_parser_create_callbacks"] = asm["_vterm_wrapper_parser_create_callbacks"];
 var _vterm_parser_get_cbdata = Module["_vterm_parser_get_cbdata"] = asm["_vterm_parser_get_cbdata"];
 var _malloc = Module["_malloc"] = asm["_malloc"];
 var _vterm_obtain_screen = Module["_vterm_obtain_screen"] = asm["_vterm_obtain_screen"];
@@ -32759,7 +32817,6 @@ run();
  */
 function VTerm(rows, cols) {
   this.term = Module._vterm_new(rows, cols);
-
   // This should be freed
   this._parser_callbacks = null;
 }
@@ -32778,33 +32835,64 @@ VTerm.prototype.get_utf8 = function() {
  * @param {object} Callbacks object
  */
 VTerm.prototype.parser_set_callbacks = function(callbacks) {
-  // XXX: sizeof(VTermParserCallbacks) right?
-  this._parser_callbacks = Module._malloc(7 * 4);
-  // text
-  if (callbacks.text) {
-    Module.setValue(this._parser_callbacks + (0 * 4), Module.Runtime.addFunction(callbacks.text), 'i32');
-  }
-  if (callbacks.control) {
-    Module.setValue(this._parser_callbacks + (1 * 4), Module.Runtime.addFunction(callbacks.control), 'i32');
-  }
-  if (callbacks.escape) {
-    Module.setValue(this._parser_callbacks + (2 * 4), Module.Runtime.addFunction(callbacks.escape), 'i32');
-  }
-  if (callbacks.csi) {
-    Module.setValue(this._parser_callbacks + (3 * 4), Module.Runtime.addFunction(callbacks.csi), 'i32');
-  }
-  if (callbacks.osc) {
-    Module.setValue(this._parser_callbacks + (4 * 4), Module.Runtime.addFunction(callbacks.osc), 'i32');
-  }
-  if (callbacks.dcs) {
-    Module.setValue(this._parser_callbacks + (5 * 4), Module.Runtime.addFunction(callbacks.dcs), 'i32');
-  }
-  if (callbacks.resize) {
-    Module.setValue(this._parser_callbacks + (6 * 4), Module.Runtime.addFunction(callbacks.resize), 'i32');
-  }
 
+  // Decorator for converting bytes into string
+  var text_wrapper = function(callback) {
+    return function(data, size, user) {
+      if (!callback) {
+	return 1;
+      }
+      var text = Pointer_stringify(data, size);
+      callback(text);
+      return 1;
+    };
+  };
+
+  var callbacks = Module._vterm_wrapper_parser_create_callbacks(
+    Module.Runtime.addFunction(text_wrapper(callbacks.text)),
+    Module.Runtime.addFunction(callbacks.control),
+    Module.Runtime.addFunction(callbacks.escape),
+    Module.Runtime.addFunction(callbacks.csi),
+    Module.Runtime.addFunction(callbacks.osc),
+    Module.Runtime.addFunction(callbacks.dcs),
+    Module.Runtime.addFunction(callbacks.resize)
+  );
   Module._vterm_parser_set_callbacks(this.term, callbacks, null);
 };
+
+VTerm.prototype.obtain_screen = function() {
+  return Module._vterm_obtain_screen(this.term);
+}
+
+VTerm.prototype.screen_set_callbacks = function(screen, callbacks) {
+  /// XXX: sizoef(VTermScreenCallbacks)
+  var cbs = Module.allocate(1024, 'i32', Module.ALLOC_STACK);
+  if (callbacks.damage) {
+    Module.setValue(cbs + (0 * 4), Module.Runtime.addFunction(callbacks.damage), 'i32*');
+  }
+  if (callbacks.moverect) {
+    Module.setValue(cbs + (1 * 4), Module.Runtime.addFunction(callbacks.moverect), 'i32*');
+  }
+  if (callbacks.movecursor) {
+    Module.setValue(cbs + (2 * 4), Module.Runtime.addFunction(callbacks.movecursor), 'i32*');
+  }
+  if (callbacks.settermprop) {
+    Module.setValue(cbs + (3 * 4), Module.Runtime.addFunction(callbacks.settermprop), 'i32*');
+  }
+  if (callbacks.bell) {
+    Module.setValue(cbs + (4 * 4), Module.Runtime.addFunction(callbacks.bell), 'i32*');
+  }
+  if (callbacks.resize) {
+    Module.setValue(cbs + (5 * 4), Module.Runtime.addFunction(callbacks.resize), 'i32*');
+  }
+  if (callbacks.sb_pushline) {
+    Module.setValue(cbs + (6 * 4), Module.Runtime.addFunction(callbacks.sb_pushline), 'i32*');
+  }
+  if (callbacks.sb_popline) {
+    Module.setValue(cbs + (7 * 4), Module.Runtime.addFunction(callbacks.sb_popline), 'i32*');
+  }
+  Module._vterm_screen_set_callbacks(screen, cbs, null);
+}
 
 VTerm.prototype.close = function() {
   if (!this.term) {
@@ -32812,6 +32900,14 @@ VTerm.prototype.close = function() {
   }
   Module._vterm_free(this.term);
   delete this.term;
+  if (!this._parser_callbacks) {
+    return;
+  }
+  Module._free(this._parser_callbacks);
+  if (!this._screen_callbacks) {
+    return;
+  }
+  Module._free(this._screen_callbacks);
 }
 
 /**
@@ -32826,7 +32922,8 @@ VTerm.prototype.write = function(data) {
   if (typeof data !== 'string') {
     return 0;
   }
-  return Module._vterm_input_write(this.term, data, data.length);
+  var buf = Module.allocate(Module.intArrayFromString(data), 'i8', Module.ALLOC_STACK);
+  return Module._vterm_input_write(this.term, buf, data.length);
 }
 
 // exports.js

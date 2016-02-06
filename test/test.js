@@ -3,8 +3,13 @@ var sinon = require('sinon');
 var VTerm = require('../vterm.js');
 
 describe('VTerm', function() {
-  var term = new VTerm(25, 80);
-  after(function() {
+  var term = null;
+
+  beforeEach(function() {
+    term = new VTerm(25, 80);
+  });
+
+  afterEach(function() {
     term.close();
   });
 
@@ -14,7 +19,8 @@ describe('VTerm', function() {
       term.close();
     });
   });
-  describe('write', function() {
+
+  describe.skip('write', function() {
     it('should return amount of data', function() {
       assert.equal(12, term.write('Hello world!'));
     });
@@ -38,36 +44,83 @@ describe('VTerm', function() {
       assert.equal(false, term.get_utf8());
     });
   });
-  describe.skip('parser', function() {
-    var text_callback = sinon.stub().throws("Error");
-    var control_callback = sinon.stub().throws("Error");
-    var escape_callback = sinon.stub().throws("Error");
-    var csi_callback = sinon.stub().throws("Error");
-    var osc_callback = sinon.stub().throws("Error");
-    var dcs_callback = sinon.stub().throws("Error");
-    var resize_callback = sinon.stub().throws("Error");
+  describe('parser', function() {
+    var text_callback = sinon.spy();
+    var control_callback = sinon.stub().returns(1);
+    var escape_callback = sinon.stub().returns(1);
+    var csi_callback = sinon.stub().returns(1);
+    var osc_callback = sinon.stub().returns(1);
+    var dcs_callback = sinon.stub().returns(1);
+    var resize_callback = sinon.stub().returns(1);
 
-    term.set_utf8(true);
-    term.parser_set_callbacks({
-      text: text_callback,
-      control: control_callback,
-      escape: escape_callback,
-      csi: csi_callback,
-      osc: osc_callback,
-      dcs: dcs_callback,
-      resize: resize_callback
+    beforeEach(function() {
+      term.set_utf8(true);
+      term.parser_set_callbacks({
+	text: text_callback,
+	control: control_callback,
+	escape: escape_callback,
+	csi: csi_callback,
+	osc: osc_callback,
+	dcs: dcs_callback,
+	resize: resize_callback
+      });
     });
+
     it('calls text callback', function() {
-      assert.equal(5, term.write('hello'));
-      assert(
-	text_callback.called ||
-	control_callback.called ||
-	escape_callback.called ||
-	csi_callback.called ||
-	osc_callback.called ||
-	dcs_callback.called ||
-	resize_callback.called
-      );
+      text_callback.reset();
+      term.write("Hello world!");
+      sinon.assert.calledWith(text_callback, "Hello world!");
+      sinon.assert.calledWith(text_callback, "ello world!");
+      sinon.assert.calledWith(text_callback, "llo world!");
+      sinon.assert.calledWith(text_callback, "lo world!");
+      sinon.assert.calledWith(text_callback, "o world!");
+      sinon.assert.calledWith(text_callback, " world!");
+      sinon.assert.calledWith(text_callback, "world!");
+      sinon.assert.calledWith(text_callback, "orld!");
+      sinon.assert.calledWith(text_callback, "rld!");
+      sinon.assert.calledWith(text_callback, "ld!");
+      sinon.assert.calledWith(text_callback, "d!");
+      sinon.assert.calledWith(text_callback, "!");
+    });
+  });
+
+  describe.skip('screen', function() {
+    var screen = null;
+
+    before(function() {
+      screen = term.obtain_screen();
+    })
+
+    it('is valid', function() {
+      assert.notEqual(0, screen);
+    });
+
+    describe('callbacks', function() {
+      var damage = sinon.stub().returns(1);
+      var moverect = sinon.stub().returns(1);
+      var movecursor = sinon.stub().returns(1);
+      var settermprop = sinon.stub().returns(1);
+      var bell = sinon.stub().returns(1);
+      var resize = sinon.stub().returns(1);
+      var sb_pushline = sinon.stub().returns(1);
+      var sb_popline = sinon.stub().returns(1);
+
+      before(function() {
+	term.screen_set_callbacks(screen, {
+	  damage: damage,
+	  moverect: moverect,
+	  movecursor: movecursor,
+	  settermprop: settermprop,
+	  bell: bell,
+	  resize: resize,
+	  sb_pushline: sb_pushline,
+	  sb_popline: sb_popline
+	});
+      });
+
+      it('works', function() {
+	term.write('Hello world!');
+      });
     });
   });
 });
