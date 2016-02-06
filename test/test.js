@@ -46,8 +46,8 @@ describe('VTerm', function() {
   });
   describe('parser', function() {
     var text_callback = sinon.spy();
-    var control_callback = sinon.stub().returns(1);
-    var escape_callback = sinon.stub().returns(1);
+    var control_callback = sinon.spy();
+    var escape_callback = sinon.spy();
     var csi_callback = sinon.stub().returns(1);
     var osc_callback = sinon.stub().returns(1);
     var dcs_callback = sinon.stub().returns(1);
@@ -56,6 +56,10 @@ describe('VTerm', function() {
     var callbacks;
 
     beforeEach(function() {
+      text_callback.reset();
+      control_callback.reset();
+      escape_callback.reset();
+
       term.set_utf8(true);
 
       callbacks = new VTerm.VTermParserCallbacks({
@@ -75,7 +79,6 @@ describe('VTerm', function() {
     })
 
     it('calls text callback', function() {
-      text_callback.reset();
       term.write("Hello world!");
       sinon.assert.calledWith(text_callback, "Hello world!");
       sinon.assert.calledWith(text_callback, "ello world!");
@@ -93,6 +96,11 @@ describe('VTerm', function() {
     it('calls control callback', function() {
       term.write('\x03');
       sinon.assert.calledWith(control_callback, 3);
+    });
+    it('calls escape callback', function() {
+      term.write('\x1B(X');
+      assert(escape_callback.called);
+      sinon.assert.calledWith(escape_callback, '(X');
     });
     describe('screen', function() {
       var screen = null;

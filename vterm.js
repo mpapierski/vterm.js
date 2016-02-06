@@ -32890,7 +32890,11 @@ function VTermParserCallbacks(callbacks) {
     callbacks.control(control);
     return 1;
   });
-  this.fn_escape = Module.Runtime.addFunction(callbacks.escape);
+  this.fn_escape = Module.Runtime.addFunction(function(bytes, len, user) {
+    var text = Pointer_stringify(bytes, len);
+    callbacks.escape(text);
+    return 1;
+  });
   this.fn_csi = Module.Runtime.addFunction(callbacks.csi);
   this.fn_osc = Module.Runtime.addFunction(callbacks.osc);
   this.fn_dcs = Module.Runtime.addFunction(callbacks.dcs);
