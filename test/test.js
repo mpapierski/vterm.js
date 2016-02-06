@@ -90,6 +90,10 @@ describe('VTerm', function() {
       sinon.assert.calledWith(text_callback, "d!");
       sinon.assert.calledWith(text_callback, "!");
     });
+    it('calls control callback', function() {
+      term.write('\x03');
+      sinon.assert.calledWith(control_callback, 3);
+    });
     describe('screen', function() {
       var screen = null;
 
