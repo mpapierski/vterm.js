@@ -102,6 +102,16 @@ describe('VTerm', function() {
       assert(escape_callback.called);
       sinon.assert.calledWith(escape_callback, '(X');
     });
+    it('calls CSI 1 arg', function() {
+      term.write('\x1b[9b');
+      assert(csi_callback.called);
+      sinon.assert.calledWith(csi_callback, '', [9], '', 98);
+    });
+    it('calls CSI 2 args', function() {
+      term.write('\x1b[3;4c');
+      assert(csi_callback.called);
+      sinon.assert.calledWith(csi_callback, '', [3, 4], '', 99);
+    });
     describe('screen', function() {
       var screen = null;
 
