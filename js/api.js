@@ -115,7 +115,10 @@ function VTermScreenCallbacks(callbacks) {
     callbacks.settermprop(prop, value);
     return 1;
   });
-  this.fn_bell = Module.Runtime.addFunction(callbacks.bell);
+  this.fn_bell = Module.Runtime.addFunction(function(user) {
+    callbacks.bell();
+    return 1;
+  });
   this.fn_resize = Module.Runtime.addFunction(callbacks.resize);
   this.fn_sb_pushline = Module.Runtime.addFunction(callbacks.sb_pushline);
   this.fn_sb_popline = Module.Runtime.addFunction(callbacks.sb_popline);

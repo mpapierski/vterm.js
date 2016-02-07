@@ -205,6 +205,12 @@ describe('VTerm', function() {
           sinon.assert.calledWith(settermprop, VTerm.VTermProp.VTERM_PROP_TITLE, 'Here is my title');
         });
 
+        it('calls bell', function() {
+          bell.reset();
+          term.write('\x1b\x07');
+          assert(bell.called);
+        });
+
       });
     });
   });
