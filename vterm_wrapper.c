@@ -93,3 +93,81 @@ char * vterm_wrapper_value_get_string(VTermValue * value)
   assert(value != NULL);
   return value->string;
 }
+
+uint32_t * vterm_wrapper_screen_cell_get_chars(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->chars;
+}
+
+int vterm_wrapper_screen_cell_get_width(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->width;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_bold(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.bold;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_underline(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.underline;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_italic(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.italic;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_blink(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.blink;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_reverse(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.reverse;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_strike(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.strike;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_font(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.font;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_dwl(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.dwl;
+}
+
+unsigned int vterm_wrapper_screen_cell_get_attrs_dhl(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->attrs.dhl;
+}
+
+VTermColor vterm_wrapper_screen_cell_get_fg(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->fg;
+}
+
+VTermColor vterm_wrapper_screen_cell_get_bg(VTermScreenCell * cell)
+{
+    assert(cell != NULL);
+    return cell->bg;
+}

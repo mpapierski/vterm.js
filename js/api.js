@@ -76,6 +76,38 @@ var VTermProp = {
   VTERM_PROP_MOUSE: 8,          // number
 };
 
+/**
+ * Wrapper for VTermScreenCell structure
+ *
+ * @class
+ */
+function VTermScreenCell(pointer) {
+  var cells_bytes = Module._vterm_wrapper_screen_cell_get_chars(pointer);
+  this.width = Module._vterm_wrapper_screen_cell_get_width(pointer);
+  this.cells = [];
+
+  for (var i = 0; i < this.width; i++) {
+    var cell = Module.getValue(cells_bytes + (i * 4), 'i32');
+    this.cells.push(cell);
+  }
+
+  this.attrs = {
+    bold: Module._vterm_wrapper_screen_cell_get_attrs_bold(pointer),
+    underline: Module._vterm_wrapper_screen_cell_get_attrs_underline(pointer),
+    italic: Module._vterm_wrapper_screen_cell_get_attrs_italic(pointer),
+    blink: Module._vterm_wrapper_screen_cell_get_attrs_blink(pointer),
+    reverse: Module._vterm_wrapper_screen_cell_get_attrs_reverse(pointer),
+    strike: Module._vterm_wrapper_screen_cell_get_attrs_strike(pointer),
+    font: Module._vterm_wrapper_screen_cell_get_attrs_font(pointer),
+    dwl: Module._vterm_wrapper_screen_cell_get_attrs_dwl(pointer),
+    dhl: Module._vterm_wrapper_screen_cell_get_attrs_dhl(pointer)
+  };
+
+  // TODO: VTermColor wrapper
+  // this.fg = Module._vterm_wrapper_screen_cell_get_fg(pointer);
+  // this.bg = Module._vterm_wrapper_screen_cell_get_bg(pointer);
+}
+
 function VTermScreenCallbacks(callbacks) {
   this.fn_damage = Module.Runtime.addFunction(function(rect, user) {
     callbacks.damage(new VTermRect(rect));
@@ -123,7 +155,18 @@ function VTermScreenCallbacks(callbacks) {
     callbacks.resize(rows, cols, new VTermPos(delta));
     return 1;
   });
-  this.fn_sb_pushline = Module.Runtime.addFunction(callbacks.sb_pushline);
+  this.fn_sb_pushline = Module.Runtime.addFunction(function(cols, cells, user) {
+    console.log('sb_pushline', cols, cells)
+    var new_cells = [];
+    for (var i = 0; i < cols; i++) {
+
+      var cell = new VTermScreenCell(cells + (i * 4));
+      new_cells.push(cell);
+    }
+
+    callbacks.sb_pushline(new_cells);
+    return 1;
+  });
   this.fn_sb_popline = Module.Runtime.addFunction(callbacks.sb_popline);
   this.pointer = Module._vterm_wrapper_screen_create_callbacks(
     this.fn_damage,

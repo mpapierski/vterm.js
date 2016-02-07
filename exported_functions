@@ -79,5 +79,18 @@
     "_vterm_wrapper_pos_get_col",
     "_vterm_wrapper_value_get_bool",
     "_vterm_wrapper_value_get_number",
-    "_vterm_wrapper_value_get_string"
+    "_vterm_wrapper_value_get_string",
+    "_vterm_wrapper_screen_cell_get_chars",
+    "_vterm_wrapper_screen_cell_get_width",
+    "_vterm_wrapper_screen_cell_get_attrs_bold",
+    "_vterm_wrapper_screen_cell_get_attrs_underline",
+    "_vterm_wrapper_screen_cell_get_attrs_italic",
+    "_vterm_wrapper_screen_cell_get_attrs_blink",
+    "_vterm_wrapper_screen_cell_get_attrs_reverse",
+    "_vterm_wrapper_screen_cell_get_attrs_strike",
+    "_vterm_wrapper_screen_cell_get_attrs_font",
+    "_vterm_wrapper_screen_cell_get_attrs_dwl",
+    "_vterm_wrapper_screen_cell_get_attrs_dhl",
+    "_vterm_wrapper_screen_cell_get_fg",
+    "_vterm_wrapper_screen_cell_get_bg"
 ]

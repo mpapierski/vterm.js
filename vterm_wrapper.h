@@ -35,4 +35,18 @@ bool vterm_wrapper_value_get_bool(VTermValue * value);
 int vterm_wrapper_value_get_number(VTermValue * value);
 char * vterm_wrapper_value_get_string(VTermValue * value);
 
+uint32_t * vterm_wrapper_screen_cell_get_chars(VTermScreenCell * cell);
+int vterm_wrapper_screen_cell_get_width(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_bold(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_underline(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_italic(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_blink(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_reverse(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_strike(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_font(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_dwl(VTermScreenCell * cell);
+unsigned int vterm_wrapper_screen_cell_get_attrs_dhl(VTermScreenCell * cell);
+VTermColor vterm_wrapper_screen_cell_get_fg(VTermScreenCell * cell);
+VTermColor vterm_wrapper_screen_cell_get_bg(VTermScreenCell * cell);
+
 #endif
