@@ -41,3 +41,27 @@ VTermScreenCallbacks * vterm_wrapper_screen_create_callbacks(
     callbacks->sb_popline = sb_popline;
     return callbacks;
 }
+
+int vterm_wrapper_rect_get_start_row(VTermRect * rect)
+{
+    assert(rect != NULL);
+    return rect->start_row;
+}
+
+int vterm_wrapper_rect_get_end_row(VTermRect * rect)
+{
+    assert(rect != NULL);
+    return rect->end_row;
+}
+
+int vterm_wrapper_rect_get_start_col(VTermRect * rect)
+{
+    assert(rect != NULL);
+    return rect->start_col;
+}
+
+int vterm_wrapper_rect_get_end_col(VTermRect * rect)
+{
+    assert(rect != NULL);
+    return rect->end_col;
+}

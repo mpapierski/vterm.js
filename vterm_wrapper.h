@@ -1,6 +1,7 @@
 #if !defined(VTERM_WRAPPER_H_)
 #define VTERM_WRAPPER_H_
 
+#include <assert.h>
 #include "vterm.h"
 
 VTermParserCallbacks * vterm_wrapper_parser_create_callbacks(
@@ -21,5 +22,10 @@ VTermScreenCallbacks * vterm_wrapper_screen_create_callbacks(
     int (*resize)(int rows, int cols, void *user),
     int (*sb_pushline)(int cols, const VTermScreenCell *cells, void *user),
     int (*sb_popline)(int cols, VTermScreenCell *cells, void *user));
+
+int vterm_wrapper_rect_get_start_row(VTermRect * rect);
+int vterm_wrapper_rect_get_end_row(VTermRect * rect);
+int vterm_wrapper_rect_get_start_col(VTermRect * rect);
+int vterm_wrapper_rect_get_end_col(VTermRect * rect);
 
 #endif

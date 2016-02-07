@@ -66,7 +66,10 @@ VTermParserCallbacks.prototype.cleanup = function() {
 }
 
 function VTermScreenCallbacks(callbacks) {
-  this.fn_damage = Module.Runtime.addFunction(callbacks.damage);
+  this.fn_damage = Module.Runtime.addFunction(function(rect, user) {
+    callbacks.damage(new VTermRect(rect));
+    return 1;
+  });
   this.fn_moverect = Module.Runtime.addFunction(callbacks.moverect);
   this.fn_movecursor = Module.Runtime.addFunction(callbacks.movecursor);
   this.fn_settermprop = Module.Runtime.addFunction(callbacks.settermprop);
@@ -97,6 +100,18 @@ VTermScreenCallbacks.prototype.cleanup = function() {
   Module._free(this.pointer);
   delete this.pointer;
 };
+
+/**
+ * Wrapper for VTermRect structure
+ *
+ * @class
+ */
+function VTermRect(pointer) {
+  this.start_row = Module._vterm_wrapper_rect_get_start_row(pointer);
+  this.end_row = Module._vterm_wrapper_rect_get_end_row(pointer);
+  this.start_col = Module._vterm_wrapper_rect_get_start_col(pointer);
+  this.end_col = Module._vterm_wrapper_rect_get_end_col(pointer);
+}
 
 /**
  * This is class abstraction of low level VTerm routines
