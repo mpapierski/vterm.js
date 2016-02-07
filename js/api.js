@@ -22,7 +22,6 @@ function VTermParserCallbacks(callbacks) {
   this.fn_csi = Module.Runtime.addFunction(function(leader, args, argcount, intermed, command, user) {
     var leader = Pointer_stringify(leader);
     var new_args = [];
-    console.log('argcount', argcount);
     for (var i = 0; i < argcount; i++) {
       new_args.push(Module.getValue(args + (i * 4), 'i32'));
     }
@@ -40,7 +39,10 @@ function VTermParserCallbacks(callbacks) {
     callbacks.dcs(command);
     return 1;
   });
-  this.fn_resize = Module.Runtime.addFunction(callbacks.resize);
+  this.fn_resize = Module.Runtime.addFunction(function(rows, cols, user) {
+    callbacks.resize(rows, cols);
+    return 1;
+  });
   this.pointer = Module._vterm_wrapper_parser_create_callbacks(
     this.fn_text,
     this.fn_control,

@@ -59,6 +59,7 @@ describe('VTerm', function() {
       text_callback.reset();
       control_callback.reset();
       escape_callback.reset();
+      resize_callback.reset();
 
       term.set_utf8(true);
 
@@ -121,6 +122,12 @@ describe('VTerm', function() {
       term.write('\x1bPHello\x07');
       assert(dcs_callback.called);
       sinon.assert.calledWith(dcs_callback, 'Hello');
+    });
+    it.skip('calls resize', function() {
+      // Sounds like parser resize callback is never called
+      term.write('\x1b[8;30;60t');
+      assert(resize_callback.called);
+      sinon.assert.calledWith(resize_callback, 30, 60);
     });
     describe('screen', function() {
       var screen = null;
