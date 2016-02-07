@@ -176,6 +176,11 @@ describe('VTerm', function() {
           assert(movecursor.called);
         });
 
+        it('moves rect', function() {
+          term.write('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n');
+          assert(moverect.called);
+        });
+
       });
     });
   });

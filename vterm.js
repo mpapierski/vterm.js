@@ -33055,7 +33055,10 @@ function VTermScreenCallbacks(callbacks) {
     callbacks.damage(new VTermRect(rect));
     return 1;
   });
-  this.fn_moverect = Module.Runtime.addFunction(callbacks.moverect);
+  this.fn_moverect = Module.Runtime.addFunction(function(dest, src) {
+    callbacks.moverect(new VTermRect(dest), new VTermRect(src));
+    return 1;
+  });
   this.fn_movecursor = Module.Runtime.addFunction(callbacks.movecursor);
   this.fn_settermprop = Module.Runtime.addFunction(callbacks.settermprop);
   this.fn_bell = Module.Runtime.addFunction(callbacks.bell);
