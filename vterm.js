@@ -33211,8 +33211,14 @@ function VTermScreenCallbacks(callbacks) {
     callbacks.settermprop(prop, value);
     return 1;
   });
-  this.fn_bell = Module.Runtime.addFunction(callbacks.bell);
-  this.fn_resize = Module.Runtime.addFunction(callbacks.resize);
+  this.fn_bell = Module.Runtime.addFunction(function(user) {
+    callbacks.bell();
+    return 1;
+  });
+  this.fn_resize = Module.Runtime.addFunction(function(rows, cols, delta) {
+    callbacks.resize(rows, cols, new VTermPos(delta));
+    return 1;
+  });
   this.fn_sb_pushline = Module.Runtime.addFunction(callbacks.sb_pushline);
   this.fn_sb_popline = Module.Runtime.addFunction(callbacks.sb_popline);
   this.pointer = Module._vterm_wrapper_screen_create_callbacks(
