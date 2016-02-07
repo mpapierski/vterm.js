@@ -65,6 +65,17 @@ VTermParserCallbacks.prototype.cleanup = function() {
   delete this.pointer;
 }
 
+var VTermProp = {
+  VTERM_PROP_CURSORVISIBLE: 1,  // bool
+  VTERM_PROP_CURSORBLINK: 2,    // bool
+  VTERM_PROP_ALTSCREEN: 3,      // bool
+  VTERM_PROP_TITLE: 4,          // string
+  VTERM_PROP_ICONNAME: 5,       // string
+  VTERM_PROP_REVERSE: 6,        // bool
+  VTERM_PROP_CURSORSHAPE: 7,    // number
+  VTERM_PROP_MOUSE: 8,          // number
+};
+
 function VTermScreenCallbacks(callbacks) {
   this.fn_damage = Module.Runtime.addFunction(function(rect, user) {
     callbacks.damage(new VTermRect(rect));
@@ -78,7 +89,32 @@ function VTermScreenCallbacks(callbacks) {
     callbacks.movecursor(new VTermPos(pos), new VTermPos(oldpos), visible);
     return 1;
   });
-  this.fn_settermprop = Module.Runtime.addFunction(callbacks.settermprop);
+  this.fn_settermprop = Module.Runtime.addFunction(function(prop, val) {
+    var value;
+    switch (prop) {
+      case VTermProp.VTERM_PROP_CURSORVISIBLE:
+      case VTermProp.VTERM_PROP_CURSORBLINK:
+      case VTermProp.VTERM_PROP_ALTSCREEN:
+      case VTermProp.VTERM_PROP_REVERSE:
+        // boolean
+        var boolean = Module._vterm_wrapper_value_get_bool(val);
+        value = !!boolean;
+        break;
+      case VTermProp.VTERM_PROP_TITLE:
+      case VTermProp.VTERM_PROP_ICONNAME:
+        // string
+        var ptr = Module._vterm_wrapper_value_get_string(val);
+        value = Pointer_stringify(ptr);
+        break;
+      case VTermProp.VTERM_PROP_CURSORSHAPE:
+      case VTermProp.VTERM_PROP_MOUSE:
+        // number
+        value = Module._vterm_wrapper_value_get_number(val);
+        break;
+    }
+    callbacks.settermprop(prop, value);
+    return 1;
+  });
   this.fn_bell = Module.Runtime.addFunction(callbacks.bell);
   this.fn_resize = Module.Runtime.addFunction(callbacks.resize);
   this.fn_sb_pushline = Module.Runtime.addFunction(callbacks.sb_pushline);

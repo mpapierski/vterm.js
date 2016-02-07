@@ -170,15 +170,39 @@ describe('VTerm', function() {
           screen_callbacks.cleanup();
         });
 
+        it('reset calls settermprop', function() {
+          term.screen_reset(screen);
+          sinon.assert.calledWith(settermprop, VTerm.VTermProp.VTERM_PROP_CURSORVISIBLE, true);
+          sinon.assert.calledWith(settermprop, VTerm.VTermProp.VTERM_PROP_CURSORBLINK, true);
+          sinon.assert.calledWith(settermprop, VTerm.VTermProp.VTERM_PROP_CURSORSHAPE, 1);
+        });
+
         it('works', function() {
+
           term.write('Hello world!');
           assert(damage.called);
           assert(movecursor.called);
+
         });
 
         it('moves rect', function() {
           term.write('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n');
           assert(moverect.called);
+        });
+
+        it('enables cursor', function() {
+          term.write('\x1b[?25h');
+          sinon.assert.calledWith(settermprop, VTerm.VTermProp.VTERM_PROP_CURSORVISIBLE, true);
+        });
+
+        it('disables cursor', function() {
+          term.write('\x1b[?25l');
+          sinon.assert.calledWith(settermprop, VTerm.VTermProp.VTERM_PROP_CURSORVISIBLE, false);
+        });
+
+        it('changes terminal title', function() {
+          term.write('\x1b]2;Here is my title\x07');
+          sinon.assert.calledWith(settermprop, VTerm.VTermProp.VTERM_PROP_TITLE, 'Here is my title');
         });
 
       });

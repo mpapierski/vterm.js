@@ -31,4 +31,8 @@ int vterm_wrapper_rect_get_end_col(VTermRect * rect);
 int vterm_wrapper_pos_get_row(VTermPos * pos);
 int vterm_wrapper_pos_get_col(VTermPos * pos);
 
+bool vterm_wrapper_value_get_bool(VTermValue * value);
+int vterm_wrapper_value_get_number(VTermValue * value);
+char * vterm_wrapper_value_get_string(VTermValue * value);
+
 #endif

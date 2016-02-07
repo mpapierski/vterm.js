@@ -75,3 +75,21 @@ int vterm_wrapper_pos_get_col(VTermPos * pos)
 {
     return pos->col;
 }
+
+bool vterm_wrapper_value_get_bool(VTermValue * value)
+{
+  assert(value != NULL);
+  return value->boolean;
+}
+
+int vterm_wrapper_value_get_number(VTermValue * value)
+{
+  assert(value != NULL);
+  return value->number;
+}
+
+char * vterm_wrapper_value_get_string(VTermValue * value)
+{
+  assert(value != NULL);
+  return value->string;
+}

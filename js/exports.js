@@ -3,5 +3,6 @@ this['VTerm'] = {
   'VTerm': VTerm,
   'VTermParserCallbacks': VTermParserCallbacks,
   'VTermScreenCallbacks': VTermScreenCallbacks,
-  'VTermRect': VTermRect
+  'VTermRect': VTermRect,
+  'VTermProp': VTermProp
 };
