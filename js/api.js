@@ -74,7 +74,10 @@ function VTermScreenCallbacks(callbacks) {
     callbacks.moverect(new VTermRect(dest), new VTermRect(src));
     return 1;
   });
-  this.fn_movecursor = Module.Runtime.addFunction(callbacks.movecursor);
+  this.fn_movecursor = Module.Runtime.addFunction(function(pos, oldpos, visible, user) {
+    callbacks.movecursor(new VTermPos(pos), new VTermPos(oldpos), visible);
+    return 1;
+  });
   this.fn_settermprop = Module.Runtime.addFunction(callbacks.settermprop);
   this.fn_bell = Module.Runtime.addFunction(callbacks.bell);
   this.fn_resize = Module.Runtime.addFunction(callbacks.resize);
@@ -114,6 +117,16 @@ function VTermRect(pointer) {
   this.end_row = Module._vterm_wrapper_rect_get_end_row(pointer);
   this.start_col = Module._vterm_wrapper_rect_get_start_col(pointer);
   this.end_col = Module._vterm_wrapper_rect_get_end_col(pointer);
+}
+
+/**
+ * Wrapper for VTermPos structure
+ *
+ * @class
+ */
+function VTermPos(pointer) {
+  this.row = Module._vterm_wrapper_pos_get_row(pointer);
+  this.col = Module._vterm_wrapper_pos_get_col(pointer);
 }
 
 /**

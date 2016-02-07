@@ -65,3 +65,13 @@ int vterm_wrapper_rect_get_end_col(VTermRect * rect)
     assert(rect != NULL);
     return rect->end_col;
 }
+
+int vterm_wrapper_pos_get_row(VTermPos * pos)
+{
+    return pos->row;
+}
+
+int vterm_wrapper_pos_get_col(VTermPos * pos)
+{
+    return pos->col;
+}

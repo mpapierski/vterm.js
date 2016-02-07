@@ -21901,6 +21901,27 @@ function _vterm_wrapper_rect_get_end_col($rect) {
  }
  return (0)|0;
 }
+function _vterm_wrapper_pos_get_row($pos) {
+ $pos = $pos|0;
+ var $0 = 0, $1 = 0, $2 = 0, label = 0, sp = 0;
+ sp = STACKTOP;
+ STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
+ $0 = $pos;
+ $1 = $0;
+ $2 = HEAP32[$1>>2]|0;
+ STACKTOP = sp;return ($2|0);
+}
+function _vterm_wrapper_pos_get_col($pos) {
+ $pos = $pos|0;
+ var $0 = 0, $1 = 0, $2 = 0, $3 = 0, label = 0, sp = 0;
+ sp = STACKTOP;
+ STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
+ $0 = $pos;
+ $1 = $0;
+ $2 = ((($1)) + 4|0);
+ $3 = HEAP32[$2>>2]|0;
+ STACKTOP = sp;return ($3|0);
+}
 function _wcrtomb($s,$wc,$st) {
  $s = $s|0;
  $wc = $wc|0;
@@ -32154,7 +32175,7 @@ var FUNCTION_TABLE_iii = [b524,b525,jsCall_iii_0,b526,jsCall_iii_1,b527,jsCall_i
 ,b539,jsCall_iii_14,b540,jsCall_iii_15,b541,jsCall_iii_16,b542,jsCall_iii_17,b543,jsCall_iii_18,b544,jsCall_iii_19,b545,b546,b547,b548,b549,b550,b551,b552,b553,b554,b555,b556,b557,b558,b559,_on_control,b560,b561
 ,b562,b563,b564,_default_malloc,b565];
 
-  return { _vterm_get_size: _vterm_get_size, _bitshift64Shl: _bitshift64Shl, _vterm_parser_get_cbdata: _vterm_parser_get_cbdata, _bitshift64Lshr: _bitshift64Lshr, _vterm_wrapper_rect_get_start_row: _vterm_wrapper_rect_get_start_row, _vterm_screen_enable_altscreen: _vterm_screen_enable_altscreen, _vterm_state_get_lineinfo: _vterm_state_get_lineinfo, _vterm_state_set_unrecognised_fallbacks: _vterm_state_set_unrecognised_fallbacks, _vterm_state_reset: _vterm_state_reset, _vterm_push_output_sprintf_ctrl: _vterm_push_output_sprintf_ctrl, _vterm_set_size: _vterm_set_size, _vterm_state_get_default_colors: _vterm_state_get_default_colors, _free: _free, _vterm_screen_get_unrecognised_fbdata: _vterm_screen_get_unrecognised_fbdata, _vterm_screen_reset: _vterm_screen_reset, _vterm_unicode_is_combining: _vterm_unicode_is_combining, _vterm_keyboard_start_paste: _vterm_keyboard_start_paste, _vterm_screen_set_callbacks: _vterm_screen_set_callbacks, _vterm_wrapper_screen_create_callbacks: _vterm_wrapper_screen_create_callbacks, _vterm_wrapper_parser_create_callbacks: _vterm_wrapper_parser_create_callbacks, _i64Subtract: _i64Subtract, _vterm_screen_get_attrs_extent: _vterm_screen_get_attrs_extent, _vterm_mouse_move: _vterm_mouse_move, _vterm_state_set_bold_highbright: _vterm_state_set_bold_highbright, _vterm_wrapper_rect_get_end_row: _vterm_wrapper_rect_get_end_row, _vterm_screen_get_chars: _vterm_screen_get_chars, _vterm_obtain_state: _vterm_obtain_state, _vterm_screen_get_text: _vterm_screen_get_text, _vterm_state_get_unrecognised_fbdata: _vterm_state_get_unrecognised_fbdata, _vterm_scroll_rect: _vterm_scroll_rect, _vterm_get_attr_type: _vterm_get_attr_type, _vterm_keyboard_end_paste: _vterm_keyboard_end_paste, _vterm_state_savepen: _vterm_state_savepen, _memset: _memset, _vterm_unicode_width: _vterm_unicode_width, _vterm_set_utf8: _vterm_set_utf8, _vterm_push_output_vsprintf: _vterm_push_output_vsprintf, _memcpy: _memcpy, _vterm_output_read: _vterm_output_read, _vterm_allocator_malloc: _vterm_allocator_malloc, _vterm_state_newpen: _vterm_state_newpen, _vterm_wrapper_rect_get_start_col: _vterm_wrapper_rect_get_start_col, _vterm_state_getpen: _vterm_state_getpen, _vterm_get_utf8: _vterm_get_utf8, _vterm_parser_set_callbacks: _vterm_parser_set_callbacks, _vterm_screen_flush_damage: _vterm_screen_flush_damage, _vterm_allocator_free: _vterm_allocator_free, _vterm_push_output_bytes: _vterm_push_output_bytes, _vterm_state_free: _vterm_state_free, _vterm_screen_is_eol: _vterm_screen_is_eol, _vterm_keyboard_unichar: _vterm_keyboard_unichar, _vterm_lookup_encoding: _vterm_lookup_encoding, _i64Add: _i64Add, _vterm_state_set_termprop: _vterm_state_set_termprop, _vterm_keyboard_key: _vterm_keyboard_key, _vterm_output_get_buffer_size: _vterm_output_get_buffer_size, _vterm_state_setpen: _vterm_state_setpen, _vterm_state_get_penattr: _vterm_state_get_penattr, _vterm_screen_set_damage_merge: _vterm_screen_set_damage_merge, _vterm_new_with_allocator: _vterm_new_with_allocator, _vterm_copy_cells: _vterm_copy_cells, _vterm_new: _vterm_new, _vterm_screen_get_cell: _vterm_screen_get_cell, _vterm_get_prop_type: _vterm_get_prop_type, _vterm_output_get_buffer_remaining: _vterm_output_get_buffer_remaining, _vterm_state_resetpen: _vterm_state_resetpen, _vterm_state_set_callbacks: _vterm_state_set_callbacks, _vterm_state_set_default_colors: _vterm_state_set_default_colors, _vterm_state_get_cursorpos: _vterm_state_get_cursorpos, _memmove: _memmove, _vterm_screen_get_cbdata: _vterm_screen_get_cbdata, _vterm_push_output_sprintf: _vterm_push_output_sprintf, _vterm_input_write: _vterm_input_write, _vterm_free: _vterm_free, _vterm_state_set_palette_color: _vterm_state_set_palette_color, _malloc: _malloc, _vterm_obtain_screen: _vterm_obtain_screen, _vterm_wrapper_rect_get_end_col: _vterm_wrapper_rect_get_end_col, _vterm_screen_set_unrecognised_fallbacks: _vterm_screen_set_unrecognised_fallbacks, _vterm_output_get_buffer_current: _vterm_output_get_buffer_current, _vterm_push_output_sprintf_dcs: _vterm_push_output_sprintf_dcs, _vterm_screen_free: _vterm_screen_free, _vterm_state_get_palette_color: _vterm_state_get_palette_color, _vterm_state_get_cbdata: _vterm_state_get_cbdata, _vterm_mouse_button: _vterm_mouse_button, runPostSets: runPostSets, stackAlloc: stackAlloc, stackSave: stackSave, stackRestore: stackRestore, establishStackSpace: establishStackSpace, setThrew: setThrew, setTempRet0: setTempRet0, getTempRet0: getTempRet0, dynCall_iiii: dynCall_iiii, dynCall_vi: dynCall_vi, dynCall_vii: dynCall_vii, dynCall_iiiiiii: dynCall_iiiiiii, dynCall_ii: dynCall_ii, dynCall_viii: dynCall_viii, dynCall_viiiiiiii: dynCall_viiiiiiii, dynCall_iiiii: dynCall_iiiii, dynCall_iii: dynCall_iii };
+  return { _vterm_set_size: _vterm_set_size, _bitshift64Lshr: _bitshift64Lshr, _vterm_screen_get_attrs_extent: _vterm_screen_get_attrs_extent, _vterm_mouse_move: _vterm_mouse_move, _vterm_state_savepen: _vterm_state_savepen, _memcpy: _memcpy, _vterm_parser_set_callbacks: _vterm_parser_set_callbacks, _vterm_wrapper_rect_get_start_col: _vterm_wrapper_rect_get_start_col, _vterm_state_get_cbdata: _vterm_state_get_cbdata, _vterm_push_output_sprintf_dcs: _vterm_push_output_sprintf_dcs, _vterm_set_utf8: _vterm_set_utf8, _vterm_state_set_callbacks: _vterm_state_set_callbacks, _free: _free, _vterm_state_get_cursorpos: _vterm_state_get_cursorpos, _vterm_input_write: _vterm_input_write, _vterm_output_get_buffer_current: _vterm_output_get_buffer_current, _vterm_state_get_palette_color: _vterm_state_get_palette_color, _vterm_state_get_default_colors: _vterm_state_get_default_colors, _vterm_wrapper_screen_create_callbacks: _vterm_wrapper_screen_create_callbacks, _vterm_screen_get_unrecognised_fbdata: _vterm_screen_get_unrecognised_fbdata, _vterm_keyboard_unichar: _vterm_keyboard_unichar, _vterm_unicode_is_combining: _vterm_unicode_is_combining, _vterm_screen_set_callbacks: _vterm_screen_set_callbacks, _vterm_keyboard_end_paste: _vterm_keyboard_end_paste, _vterm_allocator_free: _vterm_allocator_free, _vterm_state_getpen: _vterm_state_getpen, _vterm_push_output_bytes: _vterm_push_output_bytes, _vterm_state_free: _vterm_state_free, _vterm_wrapper_pos_get_col: _vterm_wrapper_pos_get_col, _vterm_screen_reset: _vterm_screen_reset, _vterm_lookup_encoding: _vterm_lookup_encoding, _vterm_screen_set_damage_merge: _vterm_screen_set_damage_merge, _vterm_wrapper_rect_get_start_row: _vterm_wrapper_rect_get_start_row, _vterm_state_set_unrecognised_fallbacks: _vterm_state_set_unrecognised_fallbacks, _vterm_wrapper_rect_get_end_row: _vterm_wrapper_rect_get_end_row, _vterm_screen_get_chars: _vterm_screen_get_chars, _vterm_free: _vterm_free, _vterm_wrapper_pos_get_row: _vterm_wrapper_pos_get_row, _vterm_screen_enable_altscreen: _vterm_screen_enable_altscreen, _vterm_unicode_width: _vterm_unicode_width, _vterm_push_output_sprintf_ctrl: _vterm_push_output_sprintf_ctrl, _vterm_keyboard_start_paste: _vterm_keyboard_start_paste, _vterm_screen_get_cell: _vterm_screen_get_cell, _vterm_state_set_bold_highbright: _vterm_state_set_bold_highbright, _vterm_obtain_state: _vterm_obtain_state, _vterm_state_get_unrecognised_fbdata: _vterm_state_get_unrecognised_fbdata, _vterm_scroll_rect: _vterm_scroll_rect, _memset: _memset, _vterm_get_attr_type: _vterm_get_attr_type, _vterm_allocator_malloc: _vterm_allocator_malloc, _vterm_state_newpen: _vterm_state_newpen, _vterm_screen_flush_damage: _vterm_screen_flush_damage, _i64Subtract: _i64Subtract, _vterm_copy_cells: _vterm_copy_cells, _vterm_get_prop_type: _vterm_get_prop_type, _vterm_output_get_buffer_remaining: _vterm_output_get_buffer_remaining, _vterm_new: _vterm_new, _malloc: _malloc, _vterm_screen_set_unrecognised_fallbacks: _vterm_screen_set_unrecognised_fallbacks, _vterm_screen_free: _vterm_screen_free, _vterm_screen_get_cbdata: _vterm_screen_get_cbdata, _vterm_push_output_vsprintf: _vterm_push_output_vsprintf, _vterm_state_get_lineinfo: _vterm_state_get_lineinfo, _vterm_output_get_buffer_size: _vterm_output_get_buffer_size, _vterm_state_reset: _vterm_state_reset, _vterm_wrapper_rect_get_end_col: _vterm_wrapper_rect_get_end_col, _bitshift64Shl: _bitshift64Shl, _vterm_state_set_palette_color: _vterm_state_set_palette_color, _vterm_screen_get_text: _vterm_screen_get_text, _vterm_screen_is_eol: _vterm_screen_is_eol, _vterm_keyboard_key: _vterm_keyboard_key, _vterm_output_read: _vterm_output_read, _vterm_get_utf8: _vterm_get_utf8, _i64Add: _i64Add, _vterm_state_setpen: _vterm_state_setpen, _vterm_state_get_penattr: _vterm_state_get_penattr, _vterm_new_with_allocator: _vterm_new_with_allocator, _vterm_state_resetpen: _vterm_state_resetpen, _vterm_state_set_termprop: _vterm_state_set_termprop, _vterm_state_set_default_colors: _vterm_state_set_default_colors, _memmove: _memmove, _vterm_get_size: _vterm_get_size, _vterm_push_output_sprintf: _vterm_push_output_sprintf, _vterm_wrapper_parser_create_callbacks: _vterm_wrapper_parser_create_callbacks, _vterm_parser_get_cbdata: _vterm_parser_get_cbdata, _vterm_obtain_screen: _vterm_obtain_screen, _vterm_mouse_button: _vterm_mouse_button, runPostSets: runPostSets, stackAlloc: stackAlloc, stackSave: stackSave, stackRestore: stackRestore, establishStackSpace: establishStackSpace, setThrew: setThrew, setTempRet0: setTempRet0, getTempRet0: getTempRet0, dynCall_iiii: dynCall_iiii, dynCall_vi: dynCall_vi, dynCall_vii: dynCall_vii, dynCall_iiiiiii: dynCall_iiiiiii, dynCall_ii: dynCall_ii, dynCall_viii: dynCall_viii, dynCall_viiiiiiii: dynCall_viiiiiiii, dynCall_iiiii: dynCall_iiiii, dynCall_iii: dynCall_iii };
 })
 // EMSCRIPTEN_END_ASM
 (Module.asmGlobalArg, Module.asmLibraryArg, buffer);
@@ -32188,22 +32209,22 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_state_savepen.apply(null, arguments);
 };
 
-var real__vterm_free = asm["_vterm_free"]; asm["_vterm_free"] = function() {
-assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_free.apply(null, arguments);
-};
-
 var real__vterm_parser_set_callbacks = asm["_vterm_parser_set_callbacks"]; asm["_vterm_parser_set_callbacks"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
 return real__vterm_parser_set_callbacks.apply(null, arguments);
 };
 
-var real__vterm_wrapper_rect_get_start_col = asm["_vterm_wrapper_rect_get_start_col"]; asm["_vterm_wrapper_rect_get_start_col"] = function() {
+var real__vterm_keyboard_key = asm["_vterm_keyboard_key"]; asm["_vterm_keyboard_key"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_wrapper_rect_get_start_col.apply(null, arguments);
+return real__vterm_keyboard_key.apply(null, arguments);
+};
+
+var real__vterm_state_get_cbdata = asm["_vterm_state_get_cbdata"]; asm["_vterm_state_get_cbdata"] = function() {
+assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+return real__vterm_state_get_cbdata.apply(null, arguments);
 };
 
 var real__vterm_push_output_sprintf_dcs = asm["_vterm_push_output_sprintf_dcs"]; asm["_vterm_push_output_sprintf_dcs"] = function() {
@@ -32218,12 +32239,6 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_set_utf8.apply(null, arguments);
 };
 
-var real__vterm_state_get_cursorpos = asm["_vterm_state_get_cursorpos"]; asm["_vterm_state_get_cursorpos"] = function() {
-assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_state_get_cursorpos.apply(null, arguments);
-};
-
 var real__vterm_state_set_callbacks = asm["_vterm_state_set_callbacks"]; asm["_vterm_state_set_callbacks"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
@@ -32234,6 +32249,12 @@ var real__free = asm["_free"]; asm["_free"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
 return real__free.apply(null, arguments);
+};
+
+var real__vterm_state_get_cursorpos = asm["_vterm_state_get_cursorpos"]; asm["_vterm_state_get_cursorpos"] = function() {
+assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+return real__vterm_state_get_cursorpos.apply(null, arguments);
 };
 
 var real__vterm_input_write = asm["_vterm_input_write"]; asm["_vterm_input_write"] = function() {
@@ -32272,10 +32293,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_screen_get_unrecognised_fbdata.apply(null, arguments);
 };
 
-var real__vterm_screen_reset = asm["_vterm_screen_reset"]; asm["_vterm_screen_reset"] = function() {
+var real__vterm_keyboard_unichar = asm["_vterm_keyboard_unichar"]; asm["_vterm_keyboard_unichar"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_screen_reset.apply(null, arguments);
+return real__vterm_keyboard_unichar.apply(null, arguments);
 };
 
 var real__vterm_unicode_is_combining = asm["_vterm_unicode_is_combining"]; asm["_vterm_unicode_is_combining"] = function() {
@@ -32288,12 +32309,6 @@ var real__vterm_screen_set_callbacks = asm["_vterm_screen_set_callbacks"]; asm["
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
 return real__vterm_screen_set_callbacks.apply(null, arguments);
-};
-
-var real__i64Subtract = asm["_i64Subtract"]; asm["_i64Subtract"] = function() {
-assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__i64Subtract.apply(null, arguments);
 };
 
 var real__vterm_keyboard_end_paste = asm["_vterm_keyboard_end_paste"]; asm["_vterm_keyboard_end_paste"] = function() {
@@ -32326,10 +32341,16 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_state_free.apply(null, arguments);
 };
 
-var real__vterm_keyboard_unichar = asm["_vterm_keyboard_unichar"]; asm["_vterm_keyboard_unichar"] = function() {
+var real__vterm_wrapper_pos_get_col = asm["_vterm_wrapper_pos_get_col"]; asm["_vterm_wrapper_pos_get_col"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_keyboard_unichar.apply(null, arguments);
+return real__vterm_wrapper_pos_get_col.apply(null, arguments);
+};
+
+var real__vterm_screen_reset = asm["_vterm_screen_reset"]; asm["_vterm_screen_reset"] = function() {
+assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+return real__vterm_screen_reset.apply(null, arguments);
 };
 
 var real__vterm_lookup_encoding = asm["_vterm_lookup_encoding"]; asm["_vterm_lookup_encoding"] = function() {
@@ -32368,10 +32389,16 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_screen_get_chars.apply(null, arguments);
 };
 
-var real__vterm_state_get_cbdata = asm["_vterm_state_get_cbdata"]; asm["_vterm_state_get_cbdata"] = function() {
+var real__vterm_free = asm["_vterm_free"]; asm["_vterm_free"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_state_get_cbdata.apply(null, arguments);
+return real__vterm_free.apply(null, arguments);
+};
+
+var real__vterm_wrapper_pos_get_row = asm["_vterm_wrapper_pos_get_row"]; asm["_vterm_wrapper_pos_get_row"] = function() {
+assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+return real__vterm_wrapper_pos_get_row.apply(null, arguments);
 };
 
 var real__vterm_screen_enable_altscreen = asm["_vterm_screen_enable_altscreen"]; asm["_vterm_screen_enable_altscreen"] = function() {
@@ -32452,10 +32479,16 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_screen_flush_damage.apply(null, arguments);
 };
 
-var real__vterm_screen_is_eol = asm["_vterm_screen_is_eol"]; asm["_vterm_screen_is_eol"] = function() {
+var real__i64Subtract = asm["_i64Subtract"]; asm["_i64Subtract"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_screen_is_eol.apply(null, arguments);
+return real__i64Subtract.apply(null, arguments);
+};
+
+var real__vterm_state_reset = asm["_vterm_state_reset"]; asm["_vterm_state_reset"] = function() {
+assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+return real__vterm_state_reset.apply(null, arguments);
 };
 
 var real__vterm_copy_cells = asm["_vterm_copy_cells"]; asm["_vterm_copy_cells"] = function() {
@@ -32500,10 +32533,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_screen_free.apply(null, arguments);
 };
 
-var real__vterm_get_size = asm["_vterm_get_size"]; asm["_vterm_get_size"] = function() {
+var real__vterm_screen_get_cbdata = asm["_vterm_screen_get_cbdata"]; asm["_vterm_screen_get_cbdata"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_get_size.apply(null, arguments);
+return real__vterm_screen_get_cbdata.apply(null, arguments);
 };
 
 var real__vterm_push_output_vsprintf = asm["_vterm_push_output_vsprintf"]; asm["_vterm_push_output_vsprintf"] = function() {
@@ -32524,10 +32557,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_output_get_buffer_size.apply(null, arguments);
 };
 
-var real__vterm_state_reset = asm["_vterm_state_reset"]; asm["_vterm_state_reset"] = function() {
+var real__vterm_screen_is_eol = asm["_vterm_screen_is_eol"]; asm["_vterm_screen_is_eol"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_state_reset.apply(null, arguments);
+return real__vterm_screen_is_eol.apply(null, arguments);
 };
 
 var real__vterm_wrapper_rect_get_end_col = asm["_vterm_wrapper_rect_get_end_col"]; asm["_vterm_wrapper_rect_get_end_col"] = function() {
@@ -32542,10 +32575,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__bitshift64Shl.apply(null, arguments);
 };
 
-var real__vterm_parser_get_cbdata = asm["_vterm_parser_get_cbdata"]; asm["_vterm_parser_get_cbdata"] = function() {
+var real__vterm_state_set_palette_color = asm["_vterm_state_set_palette_color"]; asm["_vterm_state_set_palette_color"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_parser_get_cbdata.apply(null, arguments);
+return real__vterm_state_set_palette_color.apply(null, arguments);
 };
 
 var real__vterm_screen_get_text = asm["_vterm_screen_get_text"]; asm["_vterm_screen_get_text"] = function() {
@@ -32554,10 +32587,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_screen_get_text.apply(null, arguments);
 };
 
-var real__vterm_keyboard_key = asm["_vterm_keyboard_key"]; asm["_vterm_keyboard_key"] = function() {
+var real__vterm_wrapper_rect_get_start_col = asm["_vterm_wrapper_rect_get_start_col"]; asm["_vterm_wrapper_rect_get_start_col"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_keyboard_key.apply(null, arguments);
+return real__vterm_wrapper_rect_get_start_col.apply(null, arguments);
 };
 
 var real__vterm_output_read = asm["_vterm_output_read"]; asm["_vterm_output_read"] = function() {
@@ -32620,10 +32653,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__memmove.apply(null, arguments);
 };
 
-var real__vterm_screen_get_cbdata = asm["_vterm_screen_get_cbdata"]; asm["_vterm_screen_get_cbdata"] = function() {
+var real__vterm_get_size = asm["_vterm_get_size"]; asm["_vterm_get_size"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_screen_get_cbdata.apply(null, arguments);
+return real__vterm_get_size.apply(null, arguments);
 };
 
 var real__vterm_push_output_sprintf = asm["_vterm_push_output_sprintf"]; asm["_vterm_push_output_sprintf"] = function() {
@@ -32638,10 +32671,10 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__vterm_wrapper_parser_create_callbacks.apply(null, arguments);
 };
 
-var real__vterm_state_set_palette_color = asm["_vterm_state_set_palette_color"]; asm["_vterm_state_set_palette_color"] = function() {
+var real__vterm_parser_get_cbdata = asm["_vterm_parser_get_cbdata"]; asm["_vterm_parser_get_cbdata"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__vterm_state_set_palette_color.apply(null, arguments);
+return real__vterm_parser_get_cbdata.apply(null, arguments);
 };
 
 var real__vterm_obtain_screen = asm["_vterm_obtain_screen"]; asm["_vterm_obtain_screen"] = function() {
@@ -32660,39 +32693,40 @@ var _bitshift64Lshr = Module["_bitshift64Lshr"] = asm["_bitshift64Lshr"];
 var _vterm_screen_get_attrs_extent = Module["_vterm_screen_get_attrs_extent"] = asm["_vterm_screen_get_attrs_extent"];
 var _vterm_mouse_move = Module["_vterm_mouse_move"] = asm["_vterm_mouse_move"];
 var _vterm_state_savepen = Module["_vterm_state_savepen"] = asm["_vterm_state_savepen"];
-var _vterm_free = Module["_vterm_free"] = asm["_vterm_free"];
 var _memcpy = Module["_memcpy"] = asm["_memcpy"];
 var _vterm_parser_set_callbacks = Module["_vterm_parser_set_callbacks"] = asm["_vterm_parser_set_callbacks"];
-var _vterm_wrapper_rect_get_start_col = Module["_vterm_wrapper_rect_get_start_col"] = asm["_vterm_wrapper_rect_get_start_col"];
+var _vterm_keyboard_key = Module["_vterm_keyboard_key"] = asm["_vterm_keyboard_key"];
+var _vterm_state_get_cbdata = Module["_vterm_state_get_cbdata"] = asm["_vterm_state_get_cbdata"];
 var _vterm_push_output_sprintf_dcs = Module["_vterm_push_output_sprintf_dcs"] = asm["_vterm_push_output_sprintf_dcs"];
 var _vterm_set_utf8 = Module["_vterm_set_utf8"] = asm["_vterm_set_utf8"];
-var _vterm_state_get_cursorpos = Module["_vterm_state_get_cursorpos"] = asm["_vterm_state_get_cursorpos"];
+var runPostSets = Module["runPostSets"] = asm["runPostSets"];
 var _vterm_state_set_callbacks = Module["_vterm_state_set_callbacks"] = asm["_vterm_state_set_callbacks"];
 var _free = Module["_free"] = asm["_free"];
-var runPostSets = Module["runPostSets"] = asm["runPostSets"];
+var _vterm_state_get_cursorpos = Module["_vterm_state_get_cursorpos"] = asm["_vterm_state_get_cursorpos"];
 var _vterm_input_write = Module["_vterm_input_write"] = asm["_vterm_input_write"];
 var _vterm_output_get_buffer_current = Module["_vterm_output_get_buffer_current"] = asm["_vterm_output_get_buffer_current"];
 var _vterm_state_get_palette_color = Module["_vterm_state_get_palette_color"] = asm["_vterm_state_get_palette_color"];
 var _vterm_state_get_default_colors = Module["_vterm_state_get_default_colors"] = asm["_vterm_state_get_default_colors"];
 var _vterm_wrapper_screen_create_callbacks = Module["_vterm_wrapper_screen_create_callbacks"] = asm["_vterm_wrapper_screen_create_callbacks"];
 var _vterm_screen_get_unrecognised_fbdata = Module["_vterm_screen_get_unrecognised_fbdata"] = asm["_vterm_screen_get_unrecognised_fbdata"];
-var _vterm_screen_reset = Module["_vterm_screen_reset"] = asm["_vterm_screen_reset"];
+var _vterm_keyboard_unichar = Module["_vterm_keyboard_unichar"] = asm["_vterm_keyboard_unichar"];
 var _vterm_unicode_is_combining = Module["_vterm_unicode_is_combining"] = asm["_vterm_unicode_is_combining"];
 var _vterm_screen_set_callbacks = Module["_vterm_screen_set_callbacks"] = asm["_vterm_screen_set_callbacks"];
-var _i64Subtract = Module["_i64Subtract"] = asm["_i64Subtract"];
 var _vterm_keyboard_end_paste = Module["_vterm_keyboard_end_paste"] = asm["_vterm_keyboard_end_paste"];
 var _vterm_allocator_free = Module["_vterm_allocator_free"] = asm["_vterm_allocator_free"];
 var _vterm_state_getpen = Module["_vterm_state_getpen"] = asm["_vterm_state_getpen"];
 var _vterm_push_output_bytes = Module["_vterm_push_output_bytes"] = asm["_vterm_push_output_bytes"];
 var _vterm_state_free = Module["_vterm_state_free"] = asm["_vterm_state_free"];
-var _vterm_keyboard_unichar = Module["_vterm_keyboard_unichar"] = asm["_vterm_keyboard_unichar"];
+var _vterm_wrapper_pos_get_col = Module["_vterm_wrapper_pos_get_col"] = asm["_vterm_wrapper_pos_get_col"];
+var _vterm_screen_reset = Module["_vterm_screen_reset"] = asm["_vterm_screen_reset"];
 var _vterm_lookup_encoding = Module["_vterm_lookup_encoding"] = asm["_vterm_lookup_encoding"];
 var _vterm_screen_set_damage_merge = Module["_vterm_screen_set_damage_merge"] = asm["_vterm_screen_set_damage_merge"];
 var _vterm_wrapper_rect_get_start_row = Module["_vterm_wrapper_rect_get_start_row"] = asm["_vterm_wrapper_rect_get_start_row"];
 var _vterm_state_set_unrecognised_fallbacks = Module["_vterm_state_set_unrecognised_fallbacks"] = asm["_vterm_state_set_unrecognised_fallbacks"];
 var _vterm_wrapper_rect_get_end_row = Module["_vterm_wrapper_rect_get_end_row"] = asm["_vterm_wrapper_rect_get_end_row"];
 var _vterm_screen_get_chars = Module["_vterm_screen_get_chars"] = asm["_vterm_screen_get_chars"];
-var _vterm_state_get_cbdata = Module["_vterm_state_get_cbdata"] = asm["_vterm_state_get_cbdata"];
+var _vterm_free = Module["_vterm_free"] = asm["_vterm_free"];
+var _vterm_wrapper_pos_get_row = Module["_vterm_wrapper_pos_get_row"] = asm["_vterm_wrapper_pos_get_row"];
 var _vterm_screen_enable_altscreen = Module["_vterm_screen_enable_altscreen"] = asm["_vterm_screen_enable_altscreen"];
 var _vterm_unicode_width = Module["_vterm_unicode_width"] = asm["_vterm_unicode_width"];
 var _vterm_push_output_sprintf_ctrl = Module["_vterm_push_output_sprintf_ctrl"] = asm["_vterm_push_output_sprintf_ctrl"];
@@ -32707,7 +32741,8 @@ var _vterm_get_attr_type = Module["_vterm_get_attr_type"] = asm["_vterm_get_attr
 var _vterm_allocator_malloc = Module["_vterm_allocator_malloc"] = asm["_vterm_allocator_malloc"];
 var _vterm_state_newpen = Module["_vterm_state_newpen"] = asm["_vterm_state_newpen"];
 var _vterm_screen_flush_damage = Module["_vterm_screen_flush_damage"] = asm["_vterm_screen_flush_damage"];
-var _vterm_screen_is_eol = Module["_vterm_screen_is_eol"] = asm["_vterm_screen_is_eol"];
+var _i64Subtract = Module["_i64Subtract"] = asm["_i64Subtract"];
+var _vterm_state_reset = Module["_vterm_state_reset"] = asm["_vterm_state_reset"];
 var _vterm_copy_cells = Module["_vterm_copy_cells"] = asm["_vterm_copy_cells"];
 var _vterm_get_prop_type = Module["_vterm_get_prop_type"] = asm["_vterm_get_prop_type"];
 var _vterm_output_get_buffer_remaining = Module["_vterm_output_get_buffer_remaining"] = asm["_vterm_output_get_buffer_remaining"];
@@ -32715,16 +32750,16 @@ var _vterm_new = Module["_vterm_new"] = asm["_vterm_new"];
 var _malloc = Module["_malloc"] = asm["_malloc"];
 var _vterm_screen_set_unrecognised_fallbacks = Module["_vterm_screen_set_unrecognised_fallbacks"] = asm["_vterm_screen_set_unrecognised_fallbacks"];
 var _vterm_screen_free = Module["_vterm_screen_free"] = asm["_vterm_screen_free"];
-var _vterm_get_size = Module["_vterm_get_size"] = asm["_vterm_get_size"];
+var _vterm_screen_get_cbdata = Module["_vterm_screen_get_cbdata"] = asm["_vterm_screen_get_cbdata"];
 var _vterm_push_output_vsprintf = Module["_vterm_push_output_vsprintf"] = asm["_vterm_push_output_vsprintf"];
 var _vterm_state_get_lineinfo = Module["_vterm_state_get_lineinfo"] = asm["_vterm_state_get_lineinfo"];
 var _vterm_output_get_buffer_size = Module["_vterm_output_get_buffer_size"] = asm["_vterm_output_get_buffer_size"];
-var _vterm_state_reset = Module["_vterm_state_reset"] = asm["_vterm_state_reset"];
+var _vterm_screen_is_eol = Module["_vterm_screen_is_eol"] = asm["_vterm_screen_is_eol"];
 var _vterm_wrapper_rect_get_end_col = Module["_vterm_wrapper_rect_get_end_col"] = asm["_vterm_wrapper_rect_get_end_col"];
 var _bitshift64Shl = Module["_bitshift64Shl"] = asm["_bitshift64Shl"];
-var _vterm_parser_get_cbdata = Module["_vterm_parser_get_cbdata"] = asm["_vterm_parser_get_cbdata"];
+var _vterm_state_set_palette_color = Module["_vterm_state_set_palette_color"] = asm["_vterm_state_set_palette_color"];
 var _vterm_screen_get_text = Module["_vterm_screen_get_text"] = asm["_vterm_screen_get_text"];
-var _vterm_keyboard_key = Module["_vterm_keyboard_key"] = asm["_vterm_keyboard_key"];
+var _vterm_wrapper_rect_get_start_col = Module["_vterm_wrapper_rect_get_start_col"] = asm["_vterm_wrapper_rect_get_start_col"];
 var _vterm_output_read = Module["_vterm_output_read"] = asm["_vterm_output_read"];
 var _vterm_get_utf8 = Module["_vterm_get_utf8"] = asm["_vterm_get_utf8"];
 var _i64Add = Module["_i64Add"] = asm["_i64Add"];
@@ -32735,10 +32770,10 @@ var _vterm_state_resetpen = Module["_vterm_state_resetpen"] = asm["_vterm_state_
 var _vterm_state_set_termprop = Module["_vterm_state_set_termprop"] = asm["_vterm_state_set_termprop"];
 var _vterm_state_set_default_colors = Module["_vterm_state_set_default_colors"] = asm["_vterm_state_set_default_colors"];
 var _memmove = Module["_memmove"] = asm["_memmove"];
-var _vterm_screen_get_cbdata = Module["_vterm_screen_get_cbdata"] = asm["_vterm_screen_get_cbdata"];
+var _vterm_get_size = Module["_vterm_get_size"] = asm["_vterm_get_size"];
 var _vterm_push_output_sprintf = Module["_vterm_push_output_sprintf"] = asm["_vterm_push_output_sprintf"];
 var _vterm_wrapper_parser_create_callbacks = Module["_vterm_wrapper_parser_create_callbacks"] = asm["_vterm_wrapper_parser_create_callbacks"];
-var _vterm_state_set_palette_color = Module["_vterm_state_set_palette_color"] = asm["_vterm_state_set_palette_color"];
+var _vterm_parser_get_cbdata = Module["_vterm_parser_get_cbdata"] = asm["_vterm_parser_get_cbdata"];
 var _vterm_obtain_screen = Module["_vterm_obtain_screen"] = asm["_vterm_obtain_screen"];
 var _vterm_mouse_button = Module["_vterm_mouse_button"] = asm["_vterm_mouse_button"];
 var dynCall_iiii = Module["dynCall_iiii"] = asm["dynCall_iiii"];
@@ -33059,7 +33094,10 @@ function VTermScreenCallbacks(callbacks) {
     callbacks.moverect(new VTermRect(dest), new VTermRect(src));
     return 1;
   });
-  this.fn_movecursor = Module.Runtime.addFunction(callbacks.movecursor);
+  this.fn_movecursor = Module.Runtime.addFunction(function(pos, oldpos, visible, user) {
+    callbacks.movecursor(new VTermPos(pos), new VTermPos(oldpos), visible);
+    return 1;
+  });
   this.fn_settermprop = Module.Runtime.addFunction(callbacks.settermprop);
   this.fn_bell = Module.Runtime.addFunction(callbacks.bell);
   this.fn_resize = Module.Runtime.addFunction(callbacks.resize);
@@ -33099,6 +33137,16 @@ function VTermRect(pointer) {
   this.end_row = Module._vterm_wrapper_rect_get_end_row(pointer);
   this.start_col = Module._vterm_wrapper_rect_get_start_col(pointer);
   this.end_col = Module._vterm_wrapper_rect_get_end_col(pointer);
+}
+
+/**
+ * Wrapper for VTermPos structure
+ *
+ * @class
+ */
+function VTermPos(pointer) {
+  this.row = Module._vterm_wrapper_pos_get_row(pointer);
+  this.col = Module._vterm_wrapper_pos_get_col(pointer);
 }
 
 /**

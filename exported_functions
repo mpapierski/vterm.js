@@ -74,5 +74,7 @@
     "_vterm_wrapper_rect_get_start_row",
     "_vterm_wrapper_rect_get_end_row",
     "_vterm_wrapper_rect_get_start_col",
-    "_vterm_wrapper_rect_get_end_col"
+    "_vterm_wrapper_rect_get_end_col",
+    "_vterm_wrapper_pos_get_row",
+    "_vterm_wrapper_pos_get_col"
 ]

@@ -28,4 +28,7 @@ int vterm_wrapper_rect_get_end_row(VTermRect * rect);
 int vterm_wrapper_rect_get_start_col(VTermRect * rect);
 int vterm_wrapper_rect_get_end_col(VTermRect * rect);
 
+int vterm_wrapper_pos_get_row(VTermPos * pos);
+int vterm_wrapper_pos_get_col(VTermPos * pos);
+
 #endif
